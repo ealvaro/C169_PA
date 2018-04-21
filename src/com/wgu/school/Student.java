@@ -66,4 +66,19 @@ public class Student {
     public void setGrades(Integer[] grades) {
         this.grades = grades;
     }
+
+    public String print(){
+        //can be formatted as such: 1 [tab] First Name: John [tab] Last Name: Smith [tab] Age: 20 [tab] Grades: {88, 79, 59}
+        return getStudentID()+"\tFirst Name: "+getFirst_name()+"\tLast Name: "+getLast_name()+"\tAge: "+getAge()+"\tGrades: "+printGrades();
+
+    }
+
+    private String printGrades(){
+        String allGrades = "{";
+        for (Integer aGrade : grades) {
+            allGrades+=aGrade.toString()+",";
+        }
+        allGrades=allGrades.substring(0,allGrades.length()-2)+"}";
+        return allGrades;
+    }
 }

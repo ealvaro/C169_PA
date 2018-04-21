@@ -22,8 +22,10 @@ public class Roster {
     }
 
     public static void print_all(){
-        //Tabs can be formatted as such: 1 [tab] First Name: John [tab] Last Name: Smith [tab] Age: 20 [tab] Grades: {88, 79, 59}
-
+        //The print_all() method should loop through all the students in the student array list and call the print() method for each student.
+        for (Student aRoster : Roster.roster) {
+            System.out.println(aRoster.print());
+        }
     }
 
     public static void print_average_grade(String studentID) {
@@ -54,11 +56,11 @@ public class Roster {
     }
 
     public static void main (String[] args){
-
-        for (int i = 0; i < Roster.roster.size(); i++) {
+        print_all();
+//        for (int i = 0; i < Roster.roster.size(); i++) {
 //            System.out.println(Roster.roster.size());
 //            printAverageGrade(Roster.roster.get(i).getstudentID());
 
-        }
+//        }
     }
 }
