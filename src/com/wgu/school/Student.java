@@ -3,15 +3,15 @@ package com.wgu.school;
 import java.lang.reflect.Array;
 
 public class Student {
-    private int student_ID;
+    private Integer studentID;
     private String first_name;
     private String last_name;
     private String email;
-    private int age;
-    private Array grades;
+    private Integer age;
+    private Integer[] grades;
 
-    public Student(int student_ID, String first_name, String last_name, String email, int age, Array grades) {
-        this.student_ID = student_ID;
+    public Student(Integer studentID, String first_name, String last_name, String email, Integer age, Integer[] grades) {
+        this.studentID = studentID;
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
@@ -19,12 +19,12 @@ public class Student {
         this.grades = grades;
     }
 
-    public int getStudent_ID() {
-        return student_ID;
+    public Integer getStudentID() {
+        return this.studentID;
     }
 
-    public void setStudent_ID(int student_ID) {
-        this.student_ID = student_ID;
+    public void setStudentID(Integer studentID) {
+        this.studentID = studentID;
     }
 
     public String getFirst_name() {
@@ -51,19 +51,19 @@ public class Student {
         this.email = email;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
-    public Array getGrades() {
+    public Integer[] getGrades() {
         return grades;
     }
 
-    public void setGrades(Array grades) {
+    public void setGrades(Integer[] grades) {
         this.grades = grades;
     }
 }
