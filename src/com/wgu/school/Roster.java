@@ -18,7 +18,21 @@ public class Roster {
 
     public static void remove(String studentID){
         //If the student ID doesn’t exist, the method should print an error message indicating that it is not found.
-
+        boolean removed = false;
+        for (Student currentStudent : Roster.roster) {
+            //find a match
+            if (currentStudent.getStudentID().equals(Integer.parseInt(studentID))) {
+                if (Roster.roster.remove(currentStudent)) removed = true;
+                else removed = false;
+                break;
+            }
+        }
+        if (!removed) {
+            System.out.println("No record was found for a student with student ID " + studentID + ".");
+        }
+        else {
+            System.out.println("Record removed for student with student ID " + studentID + ".");
+        }
     }
 
     public static void print_all(){
@@ -75,5 +89,10 @@ public class Roster {
         for (Student currentStudent : Roster.roster){
             print_average_grade(currentStudent.getStudentID().toString());
         }
+        remove("3");
+        //expected: this should print a message saying such a student with this ID was not found.
+        remove("3");
+
+
     }
 }
