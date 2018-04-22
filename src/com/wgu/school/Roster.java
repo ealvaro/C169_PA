@@ -34,7 +34,12 @@ public class Roster {
             //find a match
             if (currentStudent.getStudentID().equals(Integer.parseInt(studentID))) {
                 //find the average grade
+                int total = 0;
+                for (Integer grade : currentStudent.getGrades()) {
+                    total+=grade;
+                }
                 //print the average grade
+                System.out.println(currentStudent.getFirst_name()+" "+currentStudent.getLast_name()+"\t=\t"+total/currentStudent.getGrades().length);
                 found = true;
 
             }
@@ -65,10 +70,10 @@ public class Roster {
     public static void main (String[] args){
         print_all();
         print_invalid_emails();
-//        for (int i = 0; i < Roster.roster.size(); i++) {
-//            System.out.println(Roster.roster.size());
-//            printAverageGrade(Roster.roster.get(i).getstudentID());
-
-//        }
+        System.out.println("Average Grades for students in the roster:");
+        //loop through the ArrayList and for each element:
+        for (Student currentStudent : Roster.roster){
+            print_average_grade(currentStudent.getStudentID().toString());
+        }
     }
 }
