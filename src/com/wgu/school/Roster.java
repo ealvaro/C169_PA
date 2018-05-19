@@ -27,11 +27,11 @@ public class Roster {
                 break;
             }
         }
-        if (!removed) {
-            System.out.println("No record was found for a student with student ID " + studentID + ".");
+        if (removed) {
+            System.out.println("Record removed for student with student ID " + studentID + ".");
         }
         else {
-            System.out.println("Record removed for student with student ID " + studentID + ".");
+            System.out.println("No record was found for a student with student ID " + studentID + ".");
         }
     }
 
@@ -48,12 +48,15 @@ public class Roster {
             //find a match
             if (currentStudent.getStudentID().equals(Integer.parseInt(studentID))) {
                 //find the average grade
-                int total = 0;
+                double total = 0;
                 for (Integer grade : currentStudent.getGrades()) {
                     total+=grade;
                 }
+                double avg = total/currentStudent.getGrades().length;
                 //print the average grade
-                System.out.println(currentStudent.getFirst_name()+" "+currentStudent.getLast_name()+"\t=\t"+total/currentStudent.getGrades().length);
+                System.out.print(currentStudent.getFirst_name()+"\t"+currentStudent.getLast_name()+"\t=\t");
+                System.out.printf("%.1f",avg);
+                System.out.println();
                 found = true;
 
             }

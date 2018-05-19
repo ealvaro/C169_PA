@@ -1,6 +1,7 @@
 package com.wgu.school;
 
 import java.lang.reflect.Array;
+import java.util.Arrays;
 
 public class Student {
     private Integer studentID;
@@ -69,16 +70,8 @@ public class Student {
 
     public String print(){
         //can be formatted as such: 1 [tab] First Name: John [tab] Last Name: Smith [tab] Age: 20 [tab] Grades: {88, 79, 59}
-        return getStudentID()+"\tFirst Name: "+getFirst_name()+"\tLast Name: "+getLast_name()+"\tAge: "+getAge()+"\tGrades: "+printGrades();
+        return getStudentID()+"\tFirst Name: "+getFirst_name()+"\tLast Name: "+getLast_name()+"\tAge: "+getAge()+"\tGrades: "+ Arrays.toString(getGrades());
 
     }
 
-    private String printGrades(){
-        String allGrades = "{";
-        for (Integer aGrade : grades) {
-            allGrades+=aGrade.toString()+",";
-        }
-        allGrades=allGrades.substring(0,allGrades.length()-2)+"}";
-        return allGrades;
-    }
 }
