@@ -1,4 +1,4 @@
-package com.wgu.school;
+package edu.wgu.c169;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
@@ -21,7 +21,7 @@ public class Student {
     }
 
     public Integer getStudentID() {
-        return this.studentID;
+        return studentID;
     }
 
     public void setStudentID(Integer studentID) {

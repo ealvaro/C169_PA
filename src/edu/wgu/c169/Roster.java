@@ -1,4 +1,4 @@
-package com.wgu.school;
+package edu.wgu.c169;
 
 import java.util.ArrayList;
 
